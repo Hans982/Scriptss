@@ -50,9 +50,9 @@ echo -e "\e[1;32m✅ Repo initialized.\e[0m"
 echo -e "\e[1;32m✅ Repo synced.\e[0m"
 
 # ========== Clone sources ==========
-git clone https://github.com/Hans982/android_device_google_coral -bAxion-os --depth 1 device/google/flame
-git clone https://github.com/Hans982/android_device_google_gs-common -blineage-22.2 device/google/gs-common
-git clone https://github.com/Hans982/android_kernel_google_msm-4.14 -blineage-22.2 --depth 1 kernel/google/msm-4.14
+git clone https://github.com/Hans982/android_device_google_coral -b Axion-os --depth 1 device/google/flame
+git clone https://github.com/Hans982/android_device_google_gs-common -b lineage-22.2 device/google/gs-common
+git clone https://github.com/Hans982/android_kernel_google_msm-4.14 -b lineage-22.2 --depth 1 kernel/google/msm-4.14
 echo -e "\e[1;32m✅ Sources cloned.\e[0m"
 
 # ========== Export build info ==========
@@ -63,6 +63,7 @@ export TZ="Asia/Tokyo"
 # ========== Build Gapps ==========
 rm -rf out/target/product/flame out/target/product/gapps
 source build/envsetup.sh
+gk -s
 axion flame userdebug gms core
 make installclean
 ax -br || {
