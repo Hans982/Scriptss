@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ╔════════════════════════════════════════╗
-# ║         AxionOS Builder (.env)         ║
+# ║        👑 AxionOS Builder (.env)       ║
 # ╚════════════════════════════════════════╝
 
 # ========== Load local .env variables safely ==========
@@ -14,6 +14,12 @@ else
   exit 1
 fi
 
+# ========== Error trap ==========
+trap 'curl -s -X POST https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage \
+  --data-urlencode "chat_id=$TG_CHAT_ID" \
+  --data-urlencode "text=❌ *Script Failed Unexpectedly!*" \
+  --data-urlencode "parse_mode=Markdown"; exit 1' ERR
+
 # ========== Start timer ==========
 START_TIME=$(date +%s)
 
@@ -21,12 +27,12 @@ START_TIME=$(date +%s)
 curl -s -X POST https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage \
   --data-urlencode "chat_id=$TG_CHAT_ID" \
   --data-urlencode "text=🤔 *Build Started on Crave!*
-📱 *Flame* by *Hans982" \
+📱 *Flame* by *Hans982*" \
   --data-urlencode "parse_mode=Markdown"
 
-# ========== Cleaning fvcking files ==========
+# ========== Cleaning ==========
 echo -e "\e[1;35m🧹 Cleaning...\e[0m"
-rm -rf .repo/local_manifests/ device/google/flame \
+rm -rf .repo/local_manifests/ device/google/flame
 echo -e "\e[1;32m✅ Clean complete.\e[0m"
 
 # ========== Repo init ==========
@@ -61,7 +67,7 @@ export BUILD_HOSTNAME="crave"
 export TZ="Asia/Tokyo"
 
 # ========== Build Gapps ==========
-rm -rf out/target/product/flame
+rm -rf out/target/product/flame out/target/product/gapps
 source build/envsetup.sh
 axion flame userdebug gms core
 make installclean
@@ -135,7 +141,7 @@ upload_latest_zip() {
   fi
 }
 
-# ========== Run Uploads ==========
+# ========== Run Upload ==========
 upload_latest_zip "out/target/product/gapps" "Gapps"
 
 # ========== Final echo ==========
