@@ -24,9 +24,9 @@ curl -s -X POST https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage \
 📱 *Flame* by *Hans982" \
   --data-urlencode "parse_mode=Markdown"
 
-# ========== Cleaning radio files ==========
+# ========== Cleaning fvcking files ==========
 echo -e "\e[1;35m🧹 Cleaning...\e[0m"
-rm -rf .repo/local_manifests/ device/google/flame vendor/google/flame vendor/google/flame/radio \
+rm -rf .repo/local_manifests/ device/google/flame \
 echo -e "\e[1;32m✅ Clean complete.\e[0m"
 
 # ========== Repo init ==========
