@@ -64,7 +64,7 @@ export TZ="Asia/Tokyo"
 rm -rf out/target/product/flame out/target/product/gapps
 source build/envsetup.sh
 gk -s
-axion flame userdebug gms core
+axion flame gms core
 make installclean
 ax -br || {
   curl -s -X POST https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage \
