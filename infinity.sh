@@ -20,6 +20,11 @@ git clone https://github.com/Hans982/android_device_google_coral device/google/c
 git clone https://github.com/Hans982/android_device_google_gs-common device/google/gs-common -b lineage-22.2
 git clone https://github.com/Hans982/android_kernel_google_msm-4.14 kernel/google/msm-4.14 -b lineage-22.2
 
+# Build Environment
+export BUILD_USERNAME=Hans982; \
+export BUILD_HOSTNAME=crave; \
+export TZ=Asia/Tokyo; \
+
 # Build
 source build/envsetup.sh 
 lunch infinity_flame-userdebug && mka bacon
