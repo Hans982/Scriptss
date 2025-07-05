@@ -3,6 +3,8 @@
 # ====== BUILD SECTION ======
 
 # WARNING: This will remove all local changes!
+rm -rf .repo/projects
+rm -rf .repo/project-objects
 rm -rf .repo/local_manifests
 
 # Initialize repo for Infinity-X
