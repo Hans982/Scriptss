@@ -16,7 +16,7 @@ rm -rf hardware/google/camera
 
 # Clone device/vendor/kernel repositories
 git clone https://github.com/LineageOS/android_hardware_google_camera --depth=1 hardware/google/camera
-git clone https://github.com/Hans982/android_device_google_coral device/google/coral -b lineage-22.2
+git clone https://github.com/Hans982/android_device_google_coral device/google/coral -b Mist-os
 git clone https://github.com/Hans982/android_device_google_gs-common device/google/gs-common -b lineage-22.2
 git clone https://github.com/Hans982/android_kernel_google_msm-4.14 kernel/google/msm-4.14 -b lineage-22.2
 
@@ -27,4 +27,4 @@ export TZ=Asia/Tokyo; \
 
 # Build
 source build/envsetup.sh 
-mistify flame userdrbug && mist b
+mistify flame userdebug && mist b
