@@ -5,11 +5,11 @@
 # WARNING: This will remove all local changes!
 rm -rf .repo/local_manifests
 
-# Initialize repo for Infinity-X
-repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 15 -g default,-mips,-darwin,-notdefault
+# Initialize repo for Mist-os
+repo init -u https://github.com/Project-Mist-OS/manifest -b 15 --git-lfs
 
 # Sync
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # Delete hardware/google/camera
 rm -rf hardware/google/camera
@@ -27,4 +27,4 @@ export TZ=Asia/Tokyo; \
 
 # Build
 source build/envsetup.sh 
-lunch infinity_flame-userdebug && mka bacon
+mistify flame userdrbug && mist b
