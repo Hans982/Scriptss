@@ -9,7 +9,7 @@ rm -rf .repo/local_manifests
 repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs
 
 # Sync
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+repo sync
 
 # Clone device/vendor/kernel repositories
 git clone https://github.com/Hans982/android_device_google_coral device/google/coral -b lineage-22.2
