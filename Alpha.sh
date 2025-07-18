@@ -7,6 +7,7 @@ rm -rf .repo/local_manifests
 
 # Initialize repo for Alphadroid
 repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs
+
 # Sync
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 
