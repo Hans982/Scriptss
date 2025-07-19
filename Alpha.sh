@@ -12,7 +12,7 @@ repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-
 repo sync
 
 # Clone device/vendor/kernel repositories
-git clone https://github.com/Hans982/android_device_google_coral device/google/coral -b lineage-22.2
+git clone https://github.com/Hans982/android_device_google_coral device/google/coral -b Alpha
 git clone https://github.com/Hans982/android_device_google_gs-common device/google/gs-common -b lineage-22.2
 git clone https://github.com/Hans982/android_kernel_google_msm-4.14 kernel/google/msm-4.14 -b lineage-22.2
 
