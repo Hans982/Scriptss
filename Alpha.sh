@@ -24,4 +24,4 @@ export TZ=Asia/Tokyo; \
 
 # Build
 source build/envsetup.sh 
-lunch alpha_flame-userdebug && mka bacon
+brunch alpha_flame-userdebug
