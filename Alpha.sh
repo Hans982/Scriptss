@@ -4,12 +4,13 @@
 
 # WARNING: This will remove all local changes!
 rm -rf .repo/local_manifests
+rm -rf prebuilts/clang/host/linux-x86
 
 # Initialize repo for Alphadroid
 repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs
 
 # Sync
-repo sync
+/opt/crave/resync.sh
 
 # Clone device/vendor/kernel repositories
 git clone https://github.com/Hans982/android_device_google_coral device/google/coral -b Alpha
