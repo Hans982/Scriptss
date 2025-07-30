@@ -23,4 +23,4 @@ export TZ=Asia/Tokyo; \
 
 # Build
 source build/envsetup.sh 
-lunch lineage_flame-userdebug && brunch flame
+brunch flame
