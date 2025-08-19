@@ -22,5 +22,5 @@ export BUILD_HOSTNAME=crave; \
 export TZ=Asia/Tokyo; \
 
 # Build
-
-lunch infinity_flame-userdebug && mka bacon
+source build/envsetup.sh
+lunch lineage_flame-userdebug && mka bacon
