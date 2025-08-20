@@ -23,4 +23,4 @@ export TZ=Asia/Tokyo; \
 
 # Build
 source build/envsetup.sh
-lunch lineage_flame-userdebug && mka bacon
+lunch lineage_flame-userdebug && m lunaris
