@@ -15,7 +15,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 rm -rf hardware/google/camera
 
 # Clone device/vendor/kernel repositories
-git clone https://github.com/LineageOS/android_hardware_google_camera --depth=1 hardware/google/camera
 git clone https://github.com/han-senpai/device_google_coral device/google/coral -b bka
 git clone https://github.com/Hans982/android_device_google_gs-common device/google/gs-common -b lineage-23.0
 git clone https://github.com/han-senpai/kernel_google_msm-4.14 kernel/google/msm-4.14 -b bka
