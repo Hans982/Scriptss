@@ -11,11 +11,22 @@ repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/man
 # Sync
 /opt/crave/resync.sh
 
-# Delete hardware/google/camera
-rm -rf hardware/google/camera
+# =======================
+#   1. CLEANUP SECTION
+# =======================
 
-# Delete gs-common first
+echo "Cleaning up cloned repositories..."
+rm -rf prebuilts/clang/host/linux-x86
+rm -rf hardware/google/camera
 rm -rf device/google/gs-common
+rm -rf device/google/coral
+rm -rf vendor/google/flame
+rm -rf kernel/google/msm-4.14
+
+echo "Performing selective cleanup of 'out' directory..."
+rm -rf out/target/product/flame/system
+rm -rf out/target/product/flame/product
+echo "Cleanup finished."
 
 # Fix Clang overwritten by checkout
 cd prebuilts/clang/host/linux-x86
