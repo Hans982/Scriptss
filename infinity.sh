@@ -9,10 +9,18 @@ rm -rf .repo/local_manifests
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault
 
 # Sync
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+/opt/crave/resync.sh
 
 # Delete hardware/google/camera
 rm -rf hardware/google/camera
+
+# Delete gs-common first
+rm -rf device/google/gs-common
+
+# Fix Clang overwritten by checkout
+cd prebuilts/clang/host/linux-x86
+git reset --hard HEAD
+git clean -fd
 
 # Clone device/vendor/kernel repositories
 git clone https://github.com/han-senpai/device_google_coral device/google/coral -b bka
