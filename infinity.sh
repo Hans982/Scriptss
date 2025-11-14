@@ -16,7 +16,6 @@ repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/man
 # =======================
 
 echo "Cleaning up cloned repositories..."
-rm -rf prebuilts/clang/host/linux-x86
 rm -rf hardware/google/camera
 rm -rf device/google/gs-common
 rm -rf device/google/coral
