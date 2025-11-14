@@ -28,12 +28,6 @@ rm -rf out/target/product/flame/system
 rm -rf out/target/product/flame/product
 echo "Cleanup finished."
 
-# Fix Clang overwritten by checkout
-cd prebuilts/clang/host/linux-x86
-git reset --hard HEAD
-git clean -fd
-cd ../../../..
-
 # Clone device/vendor/kernel repositories
 git clone https://github.com/han-senpai/device_google_coral device/google/coral -b bka
 git clone https://github.com/Hans982/android_device_google_gs-common device/google/gs-common -b lineage-23.0
