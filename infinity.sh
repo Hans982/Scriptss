@@ -30,7 +30,7 @@ echo "Cleanup finished."
 # Clone device/vendor/kernel repositories
 git clone https://github.com/han-senpai/device_google_coral device/google/coral -b bka
 git clone https://github.com/Hans982/android_device_google_gs-common device/google/gs-common -b lineage-23.0
-git clone https://github.com/han-senpai/kernel_google_msm-4.14 kernel/google/msm-4.14 -b bka
+git clone --recursive --depth 1 https://github.com/han-senpai/kernel_google_msm-4.14 kernel/google/msm-4.14 -b bka
 git clone https://github.com/han-senpai/vendor_google_flame vendor/google/flame -b bka
 git clone https://github.com/LineageOS/android_packages_apps_ElmyraService packages/apps/ElmyraService -b lineage-23.0
 
