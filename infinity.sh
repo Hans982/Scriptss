@@ -5,27 +5,25 @@
 # WARNING: This will remove all local changes!
 rm -rf .repo/local_manifests
 
+# fix stuck git confirmation
+git config --global url."https://github.com/".insteadOf "git@github.com:"
+
 # Initialize repo for Infinity-X
 repo init --no-repo-verify --git-lfs -u https://github.com/ProjectInfinity-X/manifest -b 16 -g default,-mips,-darwin,-notdefault
 
 # Sync
 /opt/crave/resync.sh
 
-# =======================
-#   1. CLEANUP SECTION
-# =======================
-
-echo "Cleaning up cloned repositories..."
+# Cleaning cloned repos
 rm -rf hardware/google/camera
 rm -rf device/google/gs-common
 rm -rf device/google/coral
 rm -rf vendor/google/flame
 rm -rf kernel/google/msm-4.14
 
-echo "Performing selective cleanup of 'out' directory..."
+# Cleaning out dir
 rm -rf out/target/product/flame/system
 rm -rf out/target/product/flame/product
-echo "Cleanup finished."
 
 # Clone device/vendor/kernel repositories
 git clone https://github.com/han-senpai/device_google_coral device/google/coral -b bka
