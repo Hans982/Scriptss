@@ -20,7 +20,7 @@ rm -rf device/google/gs-common
 rm -rf device/google/coral
 rm -rf vendor/google/flame
 rm -rf kernel/google/msm-4.14
-rm -rf hardware/google/camera
+rm -rf packages/apps/ElmyraService
 
 # Cleaning out dir
 rm -rf out/target/product/flame/system
